@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkvwv5d6j2sms"]
+
+[ext_resource type="Texture2D" uid="uid://b8q7f7ka870xg" path="res://assets/sprites/ui/dialogue/keyboard_chars.png" id="1_w8ivi"]
+[ext_resource type="Script" path="res://dialogue_letter.gd" id="2_fb1ux"]
+
+[node name="dialogueLetter" type="TextureRect"]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_w8ivi")
+script = ExtResource("2_fb1ux")

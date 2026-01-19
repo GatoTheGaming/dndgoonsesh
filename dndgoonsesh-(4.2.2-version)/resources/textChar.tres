@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="textCharacter" load_steps=4 format=3 uid="uid://ccjm54tlpng41"]
+
+[ext_resource type="Script" path="res://textChar.gd" id="1_pnrrb"]
+[ext_resource type="Texture2D" uid="uid://b8q7f7ka870xg" path="res://assets/sprites/ui/dialogue/keyboard_chars.png" id="2_a4y8u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpbg4"]
+atlas = ExtResource("2_a4y8u")
+region = Rect2(0, 0, 40, 45)
+
+[resource]
+script = ExtResource("1_pnrrb")
+char = "E"
+texture = SubResource("AtlasTexture_dpbg4")

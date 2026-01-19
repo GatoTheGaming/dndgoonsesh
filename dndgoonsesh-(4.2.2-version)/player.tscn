@@ -1,0 +1,203 @@
+[gd_scene load_steps=19 format=3 uid="uid://buqt3711erdb"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_hlbkx"]
+[ext_resource type="Texture2D" uid="uid://lovgtx5ju7lq" path="res://assets/sprites/players/gato_small/ghetto_09.png" id="2_itedt"]
+[ext_resource type="Texture2D" uid="uid://bsads71vetuo1" path="res://assets/sprites/players/gato_small/ghetto_07.png" id="3_8m4gq"]
+[ext_resource type="Texture2D" uid="uid://d0u55qc271aef" path="res://assets/sprites/players/gato_small/ghetto_04.png" id="4_imx3u"]
+[ext_resource type="Texture2D" uid="uid://cc6rmk2jg31qb" path="res://assets/sprites/players/gato_small/ghetto_01.png" id="5_kci6l"]
+[ext_resource type="Texture2D" uid="uid://crl5k6xxq1awg" path="res://assets/sprites/players/gato_small/ghetto_06.png" id="6_88c3o"]
+[ext_resource type="Texture2D" uid="uid://esem6eifks1h" path="res://assets/sprites/players/gato_small/ghetto_08.png" id="7_7x1rr"]
+[ext_resource type="Texture2D" uid="uid://ce4ygf4dcpuev" path="res://assets/sprites/players/gato_small/ghetto_03.png" id="8_joo60"]
+[ext_resource type="Texture2D" uid="uid://cefm16yu7xdnp" path="res://assets/sprites/players/gato_small/ghetto_05.png" id="9_5crj0"]
+[ext_resource type="Texture2D" uid="uid://cakkw4cwh7c1o" path="res://assets/sprites/players/gato_small/ghetto_00.png" id="10_isq5c"]
+[ext_resource type="Texture2D" uid="uid://4wnpxsi2p52" path="res://assets/sprites/players/gato_small/ghetto_02.png" id="11_yv8tu"]
+[ext_resource type="Shader" path="res://assets/shaders/battle_scene.gdshader" id="12_3lea2"]
+[ext_resource type="Texture2D" uid="uid://n0sard4uva7c" path="res://assets/sprites/players/trueshadow.png" id="12_p1w37"]
+[ext_resource type="PackedScene" uid="uid://25tkfngxrb3i" path="res://dialogue.tscn" id="13_xwyal"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yxf3k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_itedt")
+}],
+"loop": true,
+"name": &"battle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8m4gq")
+}],
+"loop": true,
+"name": &"idle_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_imx3u")
+}],
+"loop": true,
+"name": &"idle_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_kci6l")
+}],
+"loop": true,
+"name": &"idle_side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_88c3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8m4gq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7x1rr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8m4gq")
+}],
+"loop": true,
+"name": &"walk_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_joo60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_imx3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5crj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_imx3u")
+}],
+"loop": true,
+"name": &"walk_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_isq5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kci6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_yv8tu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kci6l")
+}],
+"loop": true,
+"name": &"walk_side",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4imm"]
+size = Vector2(8, 4)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_exr5x"]
+shader = ExtResource("12_3lea2")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.234
+shader_parameter/scanlines_width = 0.19
+shader_parameter/grille_opacity = 0.253
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 48.333
+shader_parameter/roll_variation = 0.484
+shader_parameter/distort_intensity = 0.03
+shader_parameter/noise_opacity = 0.335
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.012
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.25
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.333
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dos1c"]
+size = Vector2(8, 4)
+
+[node name="player" type="CharacterBody2D"]
+y_sort_enabled = true
+texture_filter = 1
+script = ExtResource("1_hlbkx")
+
+[node name="an" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(0, 14)
+sprite_frames = SubResource("SpriteFrames_yxf3k")
+animation = &"walk_front"
+frame_progress = 0.900361
+offset = Vector2(0, -14)
+
+[node name="cam" type="Camera2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+zoom = Vector2(5, 5)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_j4imm")
+
+[node name="shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.45098)
+texture_filter = 1
+texture = ExtResource("12_p1w37")
+
+[node name="dialogueLayer" type="CanvasLayer" parent="."]
+scale = Vector2(1.12, 1.12)
+transform = Transform2D(1.12, 0, 0, 1.12, 0, 0)
+
+[node name="dialogue" parent="dialogueLayer" instance=ExtResource("13_xwyal")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+anchor_right = 0.893
+anchor_bottom = 0.886
+offset_left = 66.9643
+offset_top = 389.286
+offset_right = -212.772
+offset_bottom = 463.158
+scale = Vector2(1.19383, 1)
+
+[node name="ColorRect" type="ColorRect" parent="dialogueLayer"]
+visible = false
+material = SubResource("ShaderMaterial_exr5x")
+anchors_preset = -1
+anchor_left = 0.000403027
+anchor_top = 0.000328661
+anchor_right = 0.00300719
+anchor_bottom = 0.00492989
+offset_left = -4.46429
+offset_top = 1.78571
+offset_right = -3.46429
+offset_bottom = 2.78571
+scale = Vector2(259.714, 146.643)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="dialogueArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dialogueArea"]
+shape = SubResource("RectangleShape2D_dos1c")

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="battleattack" load_steps=2 format=3 uid="uid://c3e8j4bwrlqdu"]
+
+[ext_resource type="Script" path="res://battleattack.gd" id="1_pgife"]
+
+[resource]
+resource_name = "battleattack"
+script = ExtResource("1_pgife")
+text = "This guy does this to this guy by doing this"
