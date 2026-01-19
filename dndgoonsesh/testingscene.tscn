@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmqlujymrpsa5"]
+
+[ext_resource type="Script" path="res://testingscene.gd" id="1_sa3pm"]
+[ext_resource type="Texture2D" uid="uid://d0u55qc271aef" path="res://assets/sprites/players/gato_small/ghetto_04.png" id="2_g034g"]
+
+[node name="testingscene" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_sa3pm")
+
+[node name="file" type="FileDialog" parent="."]
+unique_name_in_owner = true
+title = "Open a File"
+initial_position = 1
+size = Vector2i(454, 159)
+exclusive = false
+popup_window = true
+ok_button_text = "Open"
+dialog_hide_on_ok = true
+file_mode = 0
+access = 2
+show_hidden_files = true
+use_native_dialog = true
+
+[node name="spr" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(592, 338)
+scale = Vector2(19.7917, 11.2813)
+texture = ExtResource("2_g034g")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(581, 339)
+
+[connection signal="file_selected" from="file" to="." method="_on_file_file_selected"]

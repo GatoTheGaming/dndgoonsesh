@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="subDialogue" load_steps=2 format=3 uid="uid://ci3n70e50vhq5"]
+
+[ext_resource type="Script" path="res://subdialogue.gd" id="1_4prp2"]
+
+[resource]
+resource_name = "subdialogue"
+script = ExtResource("1_4prp2")
+texts = Array[String](["This is default dialogue.", "Yup.", "...", "Ok bye now"])

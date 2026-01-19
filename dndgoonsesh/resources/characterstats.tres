@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="characterStats" load_steps=2 format=3 uid="uid://bo7gb45o5n6ca"]
+
+[ext_resource type="Script" path="res://characterstats.gd" id="1_8cmqq"]
+
+[resource]
+resource_name = "characterstats"
+script = ExtResource("1_8cmqq")
+name = "Defaultguy"
+desc = "Yeah hes just a default guy. What did you expect"
+health = 5
+damage = 5
+luck = 5
+defense = 5
+aura = 5
+lv = 1
+xp = 100
+maxhp = 20
+hp = 20
+dmg = 5
+lck = 5
+def = 5
+ara = 5
+normMoves = Array[Object]([])
+specialMoves = null
+ultMoves = null
+weakTo = Array[String]([])
+strongAgainst = Array[String]([])

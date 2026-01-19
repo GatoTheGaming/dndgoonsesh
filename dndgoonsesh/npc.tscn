@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6hpp6msqn728"]
+
+[ext_resource type="Script" path="res://npc.gd" id="1_ehakb"]
+[ext_resource type="Texture2D" uid="uid://257tpl8so7bm" path="res://assets/sprites/npcs/nullspace/test_shites-1.png(1).png" id="1_rkdga"]
+[ext_resource type="Script" path="res://subdialogue.gd" id="2_n3c03"]
+
+[sub_resource type="Resource" id="Resource_pt0u0"]
+script = ExtResource("2_n3c03")
+texts = Array[String](["This is default dialogue.", "Yup.", "...", "Ok bye now"])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uai6g"]
+size = Vector2(22, 5)
+
+[node name="npc" type="StaticBody2D"]
+texture_filter = 1
+script = ExtResource("1_ehakb")
+dialogue = Array[ExtResource("2_n3c03")]([SubResource("Resource_pt0u0")])
+
+[node name="sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -14)
+texture = ExtResource("1_rkdga")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uai6g")
